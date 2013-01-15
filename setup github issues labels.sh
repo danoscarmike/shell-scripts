@@ -2,6 +2,7 @@ USER=rentzsch
 PASS=mypassword
 REPO=mogenerator
 
+# Delete default labels
 curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/repos/$USER/$REPO/labels/bug"
 curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/repos/$USER/$REPO/labels/duplicate"
 curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/repos/$USER/$REPO/labels/enhancement"
@@ -9,6 +10,7 @@ curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/rep
 curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/repos/$USER/$REPO/labels/question"
 curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/repos/$USER/$REPO/labels/wontfix"
 
+# Create labels
 curl --user "$USER:$PASS" --include --request POST --data '{"name":"accepted","color":"66aa00"}' 'https://api.github.com/repos/$USER/$REPO/labels'
 curl --user "$USER:$PASS" --include --request POST --data '{"name":"reproduced","color":"006600"}' 'https://api.github.com/repos/$USER/$REPO/labels'
 curl --user "$USER:$PASS" --include --request POST --data '{"name":"cantreproduce","color":"996361"}' 'https://api.github.com/repos/$USER/$REPO/labels'
