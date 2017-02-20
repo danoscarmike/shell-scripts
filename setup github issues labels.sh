@@ -7,7 +7,7 @@ echo -n "GitHub Password: "
 read -s PASS
 
 echo ""
-echo -n "GitHub Repo (e.g. foo/bar): "
+echo -n "GitHub Repo (e.g. GitHubUser/RepoName): "
 read REPO
 
 REPO_USER=$(echo "$REPO" | cut -f1 -d /)
@@ -19,9 +19,6 @@ curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/rep
 curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/repos/$REPO_USER/$REPO_NAME/labels/duplicate"
 curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/repos/$REPO_USER/$REPO_NAME/labels/enhancement"
 curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/repos/$REPO_USER/$REPO_NAME/labels/help+wanted"
-curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/repos/$REPO_USER/$REPO_NAME/labels/invalid"
-curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/repos/$REPO_USER/$REPO_NAME/labels/question"
-curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/repos/$REPO_USER/$REPO_NAME/labels/wontfix"
 
 # Create labels
 curl --user "$USER:$PASS" --include --request POST --data '{"name":"Bug","color":"e74c3c"}' "https://api.github.com/repos/$REPO_USER/$REPO_NAME/labels"
@@ -29,3 +26,6 @@ curl --user "$USER:$PASS" --include --request POST --data '{"name":"Enhancement"
 curl --user "$USER:$PASS" --include --request POST --data '{"name":"Feature Request","color":"3498db"}' "https://api.github.com/repos/$REPO_USER/$REPO_NAME/labels"
 curl --user "$USER:$PASS" --include --request POST --data '{"name":"Suport","color":"95a5a6"}' "https://api.github.com/repos/$REPO_USER/$REPO_NAME/labels"
 curl --user "$USER:$PASS" --include --request POST --data '{"name":"Testing","color":"f1c40f"}' "https://api.github.com/repos/$REPO_USER/$REPO_NAME/labels"
+
+# Modify existing labels 
+curl --user "$USER:$PASS" -X PATCH -d '{"name":"type:Bug","color":"674ea7"}' "https://api.github.com/repos/$REPO_USER/$REPO_NAME/labels/type:Bug" 
