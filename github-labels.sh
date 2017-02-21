@@ -22,16 +22,16 @@ REPO_NAME=$(echo "$REPO" | cut -f2 -d /)
 # curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/duplicate"
 
 # Modify API labels
-curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"bigquery","color":"c0c0c0"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/bigquery" 
-curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"datastore","color":"c0c0c0"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/datastore" 
-curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"logging","color":"c0c0c0"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/logging"
-curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"language","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/language" 
-curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"pubsub","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/pubsub" 
-curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"spanner","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/spanner"
-curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"speech","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/speech" 
-curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"storage","color":"c0c0c0"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/storage" 
-curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"translation","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/translate"
-curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"vision","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/vision" 
+curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"API: bigquery","color":"c0c0c0"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/bigquery" 
+curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"API: datastore","color":"c0c0c0"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/datastore" 
+curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"API: logging","color":"c0c0c0"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/logging"
+curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"API: language","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/language" 
+curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"API: pubsub","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/pubsub" 
+curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"API: spanner","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/spanner"
+curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"API: speech","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/speech" 
+curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"API: storage","color":"c0c0c0"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/storage" 
+curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"API: translation","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/translate"
+curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"API: vision","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/vision" 
 
 
 # Modify existing status and type labels
