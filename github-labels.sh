@@ -21,14 +21,10 @@ REPO_NAME=$(echo "$REPO" | cut -f2 -d /)
 # Delete default labels
 # curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/duplicate"
 
-# Modify existing labels 
-curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"type:bug","color":"674ea7"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/type:Bug" 
+# Modify existing status labels
+curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"Status: Blocked","color":"ffee58"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/blocked" 
 
-# Create new labels
-curl --user "$USER:$PASS" --include --request POST --data '{"name":"Bug","color":"e74c3c"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
-curl --user "$USER:$PASS" --include --request POST --data '{"name":"Enhancement","color":"9b59b6"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
-curl --user "$USER:$PASS" --include --request POST --data '{"name":"Feature Request","color":"3498db"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
-curl --user "$USER:$PASS" --include --request POST --data '{"name":"Suport","color":"95a5a6"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
-curl --user "$USER:$PASS" --include --request POST --data '{"name":"Testing","color":"f1c40f"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
-
-
+# Create new priority labels
+curl --user "$USER:$PASS" --include --request POST --data '{"name": "Priority: P2+", "color": "ffee58"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
+curl --user "$USER:$PASS" --include --request POST --data '{"name": "Priority: P1", "color": "ffa03e"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
+curl --user "$USER:$PASS" --include --request POST --data '{"name":"Priority: P0","color":"db4437"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
