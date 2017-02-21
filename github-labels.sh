@@ -22,6 +22,7 @@ REPO_NAME=$(echo "$REPO" | cut -f2 -d /)
 # curl --user "$USER:$PASS" --include --request DELETE "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/duplicate"
 
 # Modify API labels
+curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"API: bigtable","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/bigtable" 
 curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"API: bigquery","color":"c0c0c0"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/bigquery" 
 curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"API: datastore","color":"c0c0c0"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/datastore" 
 curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"API: error-reporting","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/error-reporting"
@@ -56,5 +57,8 @@ curl --user "$USER:$PASS" --include --request POST --data '{"name":"Priority: P0
 
 #Create new API labels
 curl --user "$USER:$PASS" --include --request POST --data '{"name":"API: error-reporting","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
+curl --user "$USER:$PASS" --include --request POST --data '{"name":"API: language","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
 curl --user "$USER:$PASS" --include --request POST --data '{"name":"API: monitoring","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
+curl --user "$USER:$PASS" --include --request POST --data '{"name":"API: speech","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
 curl --user "$USER:$PASS" --include --request POST --data '{"name":"API: trace","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
+curl --user "$USER:$PASS" --include --request POST --data '{"name":"API: vision","color":"cd7f32"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
