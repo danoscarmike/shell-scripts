@@ -36,15 +36,15 @@ curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"vision","co
 
 # Modify existing status and type labels
 curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"Status: Blocked","color":"ffee58"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/blocked" 
-curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"Status: Don%27t Merge","color":"ffee58"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/don%27t%20merge"
-curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"Status: Won%27t Fix","color":"fef2c0"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/wontfix"
+curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"Status: Don\u0027t Merge","color":"ffee58"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/don%27t%20merge"
+curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"Status: Won\u0027t Fix","color":"fef2c0"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/wontfix"
 curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"Status: Release Blocking","color":"ffee58"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/blocking%20beta"
 curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"Type: Bug","color":"db4437"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/bug"
 curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"Type: Enhancement","color":"8bc34a"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/enhancement"
 curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"Type: Question","color":"8bc34a"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels/question"
 
 # Create new status label(s)
-curl --user "$USER:$PASS" --include --request PATCH --data '{"name":"Status: Acknowledged","color":"fef2c0"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
+curl --user "$USER:$PASS" --include --request POST --data '{"name":"Status: Acknowledged","color":"fef2c0"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
 
 # Create new priority labels
 curl --user "$USER:$PASS" --include --request POST --data '{"name": "Priority: P2+", "color": "ffee58"}' "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/labels"
